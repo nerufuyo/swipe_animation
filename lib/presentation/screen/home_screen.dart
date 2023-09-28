@@ -59,29 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? const SizedBox.shrink()
                 : _buildCarouselBackground(context),
           ),
-          AnimatedPositioned(
-            duration: const Duration(milliseconds: 300),
-            top: isCardSelected
-                ? MediaQuery.of(context).size.height * 0.1
-                : MediaQuery.of(context).size.height * 0.3,
-            left: MediaQuery.of(context).size.width * 0.25,
-            right: MediaQuery.of(context).size.width * 0.25,
-            child: AnimatedContainer(
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeInOut,
-              height: isCardSelected
-                  ? MediaQuery.of(context).size.height * 0.25
-                  : 0,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(24),
-                child: Image.asset(
-                  cinemaImages[cardSelectedIndex]['images']!,
-                  fit: BoxFit.fill,
-                ),
-              ),
-            ),
-          ),
-
+          // Pop Up Poster
+          _buildPopPoster(context),
           // Carousel Card
           FutureBuilder(
             future: Repository().getCinemas(),
@@ -100,7 +79,6 @@ class _HomeScreenState extends State<HomeScreen> {
               }
             },
           ),
-
           //Hader
           Positioned(
             top: 24,
@@ -135,6 +113,29 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  AnimatedPositioned _buildPopPoster(BuildContext context) {
+    return AnimatedPositioned(
+      duration: const Duration(milliseconds: 300),
+      top: isCardSelected
+          ? MediaQuery.of(context).size.height * 0.1
+          : MediaQuery.of(context).size.height * 0.3,
+      left: MediaQuery.of(context).size.width * 0.25,
+      right: MediaQuery.of(context).size.width * 0.25,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+        height: isCardSelected ? MediaQuery.of(context).size.height * 0.25 : 0,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(24),
+          child: Image.asset(
+            cinemaImages[cardSelectedIndex]['images']!,
+            fit: BoxFit.fill,
+          ),
+        ),
       ),
     );
   }
@@ -381,6 +382,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(16),
                                       child: CachedNetworkImage(
+                                        width: 80,
+                                        height: 80,
+                                        fit: BoxFit.cover,
                                         imageUrl: cinema[cardIndex]
                                             .actors[actorIndex]
                                             .image
@@ -391,8 +395,6 @@ class _HomeScreenState extends State<HomeScreen> {
                                             (context, url, progress) =>
                                                 Image.asset(
                                           'lib/assets/images/default.jpeg',
-                                          width: 80,
-                                          height: 80,
                                         ),
                                       ),
                                     ),
