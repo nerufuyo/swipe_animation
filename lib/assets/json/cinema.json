@@ -1,0 +1,119 @@
+{
+    "cinemas": [
+        {
+            "id": "CNM1",
+            "title": "Joker",
+            "subtitle": "Joker (2019)",
+            "images": "lib/assets/images/joker.jpeg",
+            "rating": 8.5,
+            "year": 2019,
+            "length": "2h 2min",
+            "genre": [
+                "Crime",
+                "Drama",
+                "Thriller"
+            ],
+            "director": "Todd Phillips",
+            "actors": [
+                {
+                    "name": "Joaquin Phoenix",
+                    "image": "https://www.indiewire.com/wp-content/uploads/2020/02/shutterstock_editorial_10546514ad.jpg"
+                },
+                {
+                    "name": "Robert De Niro",
+                    "image": "https://www.nme.com/wp-content/uploads/2019/10/RDN.jpg"
+                },
+                {
+                    "name": "Zazie Beetz",
+                    "image": "https://www.essence.com/wp-content/uploads/2017/08/1489172783/GettyImages-588435920_0.jpg"
+                },
+                {
+                    "name": "Frances Conroy",
+                    "image": "https://marriedbiography.org/wp-content/uploads/2020/04/Frances-Conroy.jpg"
+                },
+                {
+                    "name": "Brett Cullen",
+                    "image": "https://superstarsbio.com/wp-content/uploads/2019/09/bretlen.jpg"
+                }
+            ],
+            "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.",
+            "trailer": "https://www.youtube.com/watch?v=zAGVQLHvwOY"
+        },
+        {
+            "id": "CNM2",
+            "title": "The Taxi Driver",
+            "subtitle": "Taxi Driver (1976)",
+            "images": "lib/assets/images/taxi.jpeg",
+            "rating": 8.3,
+            "year": 1976,
+            "length": "1h 54min",
+            "genre": [
+                "Crime",
+                "Drama"
+            ],
+            "director": "Martin Scorsese",
+            "actors": [
+                {
+                    "name": "Robert De Niro",
+                    "image": "https://www.nme.com/wp-content/uploads/2019/10/RDN.jpg"
+                },
+                {
+                    "name": "Jodie Foster",
+                    "image": "https://gregreport.com/wp-content/uploads/2020/07/160509-yamato-jodie-foster-tease_isepgt-1-1000x635.jpeg"
+                },
+                {
+                    "name": "Cybill Shepherd",
+                    "image": "https://prod-images.tcm.com/Master-Profile-Images/CybillShepherd.175963.jpg"
+                },
+                {
+                    "name": "Harvey Keitel",
+                    "image": "https://starschanges.com/wp-content/uploads/2019/12/Harvey-Keitel.jpg"
+                },
+                {
+                    "name": "Peter Boyle",
+                    "image": "https://www.oprah.com/g/image-resizer?width=670&link=http://static.oprah.com/images/tows/200502/20050209/20050209_109_350x263.jpg"
+                }
+            ],
+            "description": "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute.",
+            "trailer": "https://www.youtube.com/watch?v=sLpMx8_TYOo"
+        },
+        {
+            "id": "CNM3",
+            "title": "The Godfather",
+            "subtitle": "The Godfather (1972)",
+            "images": "lib/assets/images/tgf.jpeg",
+            "rating": 9.2,
+            "year": 1972,
+            "length": "2h 55min",
+            "genre": [
+                "Crime",
+                "Drama"
+            ],
+            "director": "Francis Ford Coppola",
+            "actors": [
+                {
+                    "name": "Marlon Brando",
+                    "image": "https://www.thefamouspeople.com/profiles/images/marlon-brando-9.jpg"
+                },
+                {
+                    "name": "Al Pacino",
+                    "image": "https://www.goldenglobes.com/sites/default/files/articles/cover_images/23-al_pacino_102519_000_2.jpg"
+                },
+                {
+                    "name": "James Caan",
+                    "image": "https://factsfive.com/wp-content/uploads/2020/11/James-Caan-Wiki-Bio-Age-Net-Worth-and-Other-Facts-scaled.jpg"
+                },
+                {
+                    "name": "Robert Duvall",
+                    "image": "https://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2015/3/24/1427218933314/Robert-Duvall-009.jpg"
+                },
+                {
+                    "name": "Diane Keaton",
+                    "image": "https://preview.redd.it/jz2gjtcqoop41.jpg?auto=webp&s=754d019083795475ca03c66ee6c421e5f35fcab4"
+                }
+            ],
+            "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            "trailer": "https://www.youtube.com/watch?v=sY1S34973zA"
+        }
+    ]
+}
