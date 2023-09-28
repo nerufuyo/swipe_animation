@@ -15,6 +15,8 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   iconsax: ^0.0.8
   cached_network_image: ^3.3.0
+  youtube_player_iframe: ^4.0.4
+  lottie: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -28,4 +30,5 @@ flutter:
     - lib/assets/images/taxi.jpeg
     - lib/assets/images/tgf.jpeg
     - lib/assets/images/default.jpeg
+    - lib/assets/images/success.json
     - lib/assets/json/cinema.json

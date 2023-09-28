@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,8 +20,24 @@ class MyApp extends StatelessWidget {
             return MaterialPageRoute(builder: (context) => const HomeScreen());
           case TicketScreen.routeName:
             final String id = settings.arguments as String;
-            return MaterialPageRoute(
-                builder: (context) => TicketScreen(id: id));
+            return PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) =>
+                  TicketScreen(id: id),
+              transitionDuration: const Duration(milliseconds: 500),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                const begin = Offset(0.0, 1.0);
+                const end = Offset.zero;
+                const curve = Curves.ease;
+                final tween = Tween(begin: begin, end: end).chain(
+                  CurveTween(curve: curve),
+                );
+                return SlideTransition(
+                  position: animation.drive(tween),
+                  child: child,
+                );
+              },
+            );
 
           default:
             return MaterialPageRoute(

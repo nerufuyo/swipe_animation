@@ -5,6 +5,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:swipe_animation/data/model/cinema_model.dart';
 import 'package:swipe_animation/data/repository/repository.dart';
+import 'package:swipe_animation/presentation/screen/ticket_screen.dart';
 import 'package:swipe_animation/presentation/widget/components.dart';
 import 'package:swipe_animation/style/pallet.dart';
 import 'package:swipe_animation/style/typography.dart';
@@ -24,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   String cardSelectedId = '';
   int cardSelectedIndex = 0;
   bool isCardSelected = false;
+  bool isBuyClicked = false;
 
   void fetchData() async {
     final cinema = await Repository().getCinemas();
@@ -92,24 +94,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 ? const Duration(milliseconds: 500)
                 : const Duration(milliseconds: 200),
             bottom: isCardSelected ? 20 : 54,
-            left: isCardSelected ? 16 : 66,
-            right: isCardSelected ? 16 : 66,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                backgroundColor: primaryColor,
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-              ),
-              child: customText(
-                customTextValue: 'Buy Ticket',
-                customTextStyle: bodyText3.copyWith(color: whiteColor),
-              ),
+            left: isCardSelected
+                ? 16
+                : isBuyClicked || (isCardSelected && isBuyClicked)
+                    ? MediaQuery.of(context).size.width * 0.45
+                    : 66,
+            right: isCardSelected
+                ? 16
+                : isBuyClicked || (isCardSelected && isBuyClicked)
+                    ? MediaQuery.of(context).size.width * 0.45
+                    : 66,
+            child: customButton(
+              buttonVisible: !isBuyClicked,
+              buttonOnTapped: () {
+                setState(() => isBuyClicked = true);
+                Future.delayed(const Duration(milliseconds: 500), () {
+                  Navigator.pushNamed(context, TicketScreen.routeName,
+                          arguments: cardSelectedId)
+                      .then((value) => setState(() => isBuyClicked = false));
+                });
+              },
+              buttonText: 'Buy Ticket',
+              buttonBorderRadius: BorderRadius.circular(isBuyClicked ? 24 : 8),
             ),
           ),
         ],
